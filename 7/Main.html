@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторная работа №7</title>
+    <link rel="stylesheet" href="./css/Css.css">
+</head>
+<body>
+    <div id="application">
+    <header>
+        <div class="logo">
+            <img src="./image/BlogLogo.png" alt="">
+        </div>
+            <div class="icon-menu">
+                <img src="./image/Union.png" alt="">
+            </div>
+        <div class="button-link">
+            <a href="#" class="link-use">
+                <img src="./image/Profile.png" alt="">
+                <span>Войти</span>
+            </a>
+            <a href="#" class="close">Зарегистрироваться</a>
+        </div>
+    </header>
+    <main>        
+        <div class="main-catalog">
+            <span class="span">Последние публикации</span>
+            <div class="catalog-iteam">
+                <div class="row">
+                    <div v-for="inf in materials" class="iteam">
+                        <img v-bind:src="inf.image" alt="">
+                        <div class="first-text">{{inf.title}}</div>
+                        <div class="match-text">{{inf.intro}}</div>
+                        <div class="category">
+                            <div v-for="lebel_iteam in inf.labels" class="category-block">{{lebel_iteam}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main-category">
+                <span>Рубрики</span>
+                <a href="#">Обучение</a>
+                <a href="#">Карьера</a>
+                <a href="#">Figma</a>
+                <a href="#">Консоль</a>
+                <a href="#">Git</a>
+                <a href="#">Новости</a>
+            </div>
+    </main>
+   
+    <footer class="footer">
+        <div class="footer-main">
+          <div class="footer-main-content">
+            <div class="footer-main-content-nav">
+              <a href="https://github.com/Meoowka?tab=repositories">Об авторе</a>
+              <a href="">Технологии</a>
+            </div>
+            <div class="footer-main-content-label">
+              <label for="">© blog, 2022</label>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+
+    <script src="./Data.js"></script>
+    <script src="./vue.min.js"></script>
+    <script src="./main_js.js"></script>
+</body>
+</html>
